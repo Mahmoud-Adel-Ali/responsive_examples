@@ -6,38 +6,19 @@ class FlexibleAndFittedBoxEx extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const Flexible(
-              child: Icon(
-            Icons.ac_unit,
-            size: 200,
-          )),
-          Expanded(
-            flex: 2,
-            child: Container(
-              height: 100,
-              color: Colors.red,
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 100,
-              color: Colors.blue,
-            ),
-          ),
-          Container(
-            height: 100,
-            color: Colors.green,
-          ),
-          Container(
-            height: 100,
-            color: Colors.yellow,
-          ),
-          
-        ],
+        body: GridView.builder(
+      itemCount: 10,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 1.0,
+        mainAxisSpacing: 10.0,
+        crossAxisSpacing: 10.0,
       ),
-    );
+      itemBuilder: (context, index) {
+        return FittedBox(
+            child: Image.network(
+                'https://avatars.githubusercontent.com/u/141450980?v=4'));
+      },
+    ));
   }
 }

@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:responsive_widgets/widgets/layout_builder.dart';
+import 'package:responsive_widgets/widgets/expanded.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -8,7 +8,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: LayoutBuilderEx(),
+      body: ExpandedEx(),
     );
   }
 }
